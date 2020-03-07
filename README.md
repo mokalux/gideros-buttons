@@ -1,1 +1,1 @@
-gideros ui
+Buttons for your gideros projects.
