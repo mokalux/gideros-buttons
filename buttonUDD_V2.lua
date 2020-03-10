@@ -6,7 +6,7 @@ v 0.1.0: 2020-03-09 init (based on the initial gideros generic button class)
 ]]
 --[[
 -- sample usage
-	local button = ButtonUDD_V2.new(
+	local button = ButtonTextUDD.new(
 		{
 			text="01", textscalex=4, textcolorup=0x0, textcolordown=0xffff00,
 			imgdown="gfx/ui/Blue.png",
@@ -16,7 +16,7 @@ v 0.1.0: 2020-03-09 init (based on the initial gideros generic button class)
 	button:setPosition(64, 2 * 16)
 	stage:addChild(button)
 
-	local button2 = ButtonUDD_V2.new(
+	local button2 = ButtonTextUDD.new(
 		{
 			text="02 CAN DO", textscalex=4, textcolorup=0x0, textcolordown=0xffff00,
 			imgup="gfx/ui/blue (2).png", imgdown="gfx/ui/Blue.png", imgdisabled="gfx/ui/blocker2.png",
@@ -33,9 +33,9 @@ v 0.1.0: 2020-03-09 init (based on the initial gideros generic button class)
 		-- your code here
 	end)
 ]]
-ButtonUDD_V2 = Core.class(Sprite)
+ButtonTextUDD = Core.class(Sprite)
 
-function ButtonUDD_V2:init(xparams)
+function ButtonTextUDD:init(xparams)
 	-- the params
 	self.params = xparams or {}
 	self.params.imgup = xparams.imgup or nil -- img up path
@@ -121,7 +121,7 @@ function ButtonUDD_V2:init(xparams)
 end
 
 -- FUNCTIONS
-function ButtonUDD_V2:setText(xtext)
+function ButtonTextUDD:setText(xtext)
 	if self.params.font ~= nil then
 		self.font = TTFont.new(self.params.font, self.params.fontsize)
 	end
@@ -163,12 +163,12 @@ function ButtonUDD_V2:setText(xtext)
 	end
 end
 
-function ButtonUDD_V2:setTextColor(xcolor)
+function ButtonTextUDD:setTextColor(xcolor)
 	self.text:setTextColor(xcolor or 0x0)
 end
 
 -- VISUAL STATE
-function ButtonUDD_V2:updateVisualState(xstate)
+function ButtonTextUDD:updateVisualState(xstate)
 	if self.disabled then -- button disabled state
 		if self.params.imgup ~= nil then self.bmpup:setVisible(false) end
 		if self.params.imgdown ~= nil then self.bmpdown:setVisible(false) end
@@ -189,7 +189,7 @@ function ButtonUDD_V2:updateVisualState(xstate)
 	end
 end
 
-function ButtonUDD_V2:setDisabled(xdisabled)
+function ButtonTextUDD:setDisabled(xdisabled)
 	if self.disabled == xdisabled then
 		return
 	end
@@ -198,20 +198,20 @@ function ButtonUDD_V2:setDisabled(xdisabled)
 	self:updateVisualState(false)
 end
 
-function ButtonUDD_V2:isDisabled()
+function ButtonTextUDD:isDisabled()
 	return self.disabled
 end
 
 -- BUTTON LISTENERS
 -- mouse
-function ButtonUDD_V2:onMouseDown(e)
+function ButtonTextUDD:onMouseDown(e)
 	if self:hitTestPoint(e.x, e.y) then
 		self.focus = true
 		self:updateVisualState(true)
 		e:stopPropagation()
 	end
 end
-function ButtonUDD_V2:onMouseMove(e)
+function ButtonTextUDD:onMouseMove(e)
 	if self:hitTestPoint(e.x, e.y) then
 		self.focus = true
 		self:updateVisualState(true)
@@ -225,7 +225,7 @@ function ButtonUDD_V2:onMouseMove(e)
 		end
 	end
 end
-function ButtonUDD_V2:onMouseUp(e)
+function ButtonTextUDD:onMouseUp(e)
 	if self.focus then
 		self.focus = false
 		self:updateVisualState(false)
@@ -235,7 +235,7 @@ function ButtonUDD_V2:onMouseUp(e)
 		e:stopPropagation()
 	end
 end
-function ButtonUDD_V2:onMouseHover(e)
+function ButtonTextUDD:onMouseHover(e)
 	if self:hitTestPoint(e.x, e.y) then
 		self.focus = true
 		self:updateVisualState(true)
@@ -245,22 +245,22 @@ function ButtonUDD_V2:onMouseHover(e)
 	end
 end
 -- touch
-function ButtonUDD_V2:onTouchesBegin(e)
+function ButtonTextUDD:onTouchesBegin(e)
 	if self.focus then
 		e:stopPropagation()
 	end
 end
-function ButtonUDD_V2:onTouchesMove(e)
+function ButtonTextUDD:onTouchesMove(e)
 	if self.focus then
 		e:stopPropagation()
 	end
 end
-function ButtonUDD_V2:onTouchesEnd(e)
+function ButtonTextUDD:onTouchesEnd(e)
 	if self.focus then
 		e:stopPropagation()
 	end
 end
-function ButtonUDD_V2:onTouchesCancel(e)
+function ButtonTextUDD:onTouchesCancel(e)
 	if self.focus then
 		self.focus = false
 		self:updateVisualState(false)
