@@ -13,7 +13,7 @@ This button has:
 - a down state (image)
 - a disabled state (image)
 
-## BUTTON_UDD_V2
+## BUTTON_TEXT_UDD
 This is the most complete button :-)
 This button has:
 - text (optional)
