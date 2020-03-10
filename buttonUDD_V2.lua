@@ -1,5 +1,5 @@
 --[[
-A Button class with text and/or image width Up state, Down state, Disabled state (UDD)
+A Button class with text and/or image with Up state, Down state, Disabled state (UDD)
 This code is MIT licensed, see http://www.opensource.org/licenses/mit-license.php
 github: mokalux
 v 0.1.0: 2020-03-09 init (based on the initial gideros generic button class)
