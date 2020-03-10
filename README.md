@@ -9,15 +9,15 @@ This button has:
 
 ## BUTTON_UDD
 This button has:
-- an up state (image)
-- a down state (image)
-- a disabled state (image)
+- an up state (image) U
+- a down state (image) D
+- a disabled state (image) D
 
 ## BUTTON_TEXT_UDD
 This is the most complete button :-)
 This button has:
 - text (optional)
-- an up state (image optional)
-- a down state (image optional)
-- a disabled state (image optional)
+- an up state (image optional) U
+- a down state (image optional) D
+- a disabled state (image optional) D
 - very customisable
