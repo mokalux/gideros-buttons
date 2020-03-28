@@ -14,10 +14,20 @@ This button has:
 - a disabled state (image) D
 
 ## BUTTON_TEXT_UDD
+This is a complete button :-)
+This button has:
+- text (optional)
+- an up state (image optional) U
+- a down state (image optional) D
+- a disabled state (image optional) D
+- very customisable
+
+## BUTTON_TEXT_UDDP
 This is the most complete button :-)
 This button has:
 - text (optional)
 - an up state (image optional) U
 - a down state (image optional) D
 - a disabled state (image optional) D
+- a pixel
 - very customisable
