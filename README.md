@@ -29,5 +29,5 @@ This button has:
 - an up state (image optional) U
 - a down state (image optional) D
 - a disabled state (image optional) D
-- a pixel
+- a pixel (optional) P
 - very customisable
