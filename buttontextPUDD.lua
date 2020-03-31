@@ -1,16 +1,17 @@
 --[[
-A Button class with text and/or image/pixel with Up state, Down state, Disabled state (UDD)
+ButtonTextPUDD
+A Button class with text, Pixel, images: Up, Down, Disabled
 This code is MIT licensed, see http://www.opensource.org/licenses/mit-license.php
 github: mokalux
 v 0.1.0: 2020-03-28 init (based on the initial gideros generic button class)
 ]]
 --[[
 -- SAMPLES
-local button = ButtonTextUDDP.new({
+local button = ButtonTextPUDD.new({
 	imgup="gfx/ui/btn_01_up.png", imgdown="gfx/ui/btn_01_down.png",
 	text="BUTTON 1", textscalex=4, textcolorup=0x0, textcolordown=0xffff00,
 })
-local button2 = ButtonTextUDDP.new({
+local button2 = ButtonTextPUDD.new({
 	imgup="gfx/ui/btn_02_up.png", imgdown="gfx/ui/btn_02_down.png", imgdisabled="gfx/ui/btn_02_disabled.png",
 	text="BUTTON 2", textscalex=4, textcolorup=0x0, textcolordown=0xffff00, font = "fonts/Kenney Future Narrow.ttf", fontsize = 10,
 	nohover=true,
@@ -22,7 +23,7 @@ button2:addEventListener("click", function()
 	-- your code here
 end)
 
-local button3 = ButtonTextUDDP.new({
+local button3 = ButtonTextPUDD.new({
 	pixelcolorup = "0xffddff", pixelcolordown = "0xff0000",
 	text = "BUTTON 3", textscalex = 4,
 })
@@ -33,9 +34,9 @@ stage:addChild(button)
 stage:addChild(button2)
 stage:addChild(button3)
 ]]
-ButtonTextUDDP = Core.class(Sprite)
+ButtonTextPUDD = Core.class(Sprite)
 
-function ButtonTextUDDP:init(xparams)
+function ButtonTextPUDD:init(xparams)
 	-- the params
 	self.params = xparams or {}
 	-- textures?
@@ -140,7 +141,7 @@ function ButtonTextUDDP:init(xparams)
 end
 
 -- FUNCTIONS
-function ButtonTextUDDP:setText(xtext)
+function ButtonTextPUDD:setText(xtext)
 	if self.params.font ~= nil then
 --		self.font = TTFont.new(self.params.font, self.params.fontsize, "", true, 1) -- , filtering, outline (number)
 		self.font = TTFont.new(self.params.font, self.params.fontsize, "")
@@ -193,12 +194,12 @@ function ButtonTextUDDP:setText(xtext)
 	end
 end
 
-function ButtonTextUDDP:setTextColor(xcolor)
+function ButtonTextPUDD:setTextColor(xcolor)
 	self.text:setTextColor(xcolor or 0x0)
 end
 
 -- VISUAL STATE
-function ButtonTextUDDP:updateVisualState(xstate)
+function ButtonTextPUDD:updateVisualState(xstate)
 	if self.disabled then -- button disabled state
 		if self.params.imgup ~= nil then self.bmpup:setVisible(false) end
 		if self.params.imgdown ~= nil then self.bmpdown:setVisible(false) end
@@ -222,7 +223,7 @@ function ButtonTextUDDP:updateVisualState(xstate)
 	end
 end
 
-function ButtonTextUDDP:setDisabled(xdisabled)
+function ButtonTextPUDD:setDisabled(xdisabled)
 	if self.disabled == xdisabled then
 		return
 	end
@@ -231,20 +232,20 @@ function ButtonTextUDDP:setDisabled(xdisabled)
 	self:updateVisualState(false)
 end
 
-function ButtonTextUDDP:isDisabled()
+function ButtonTextPUDD:isDisabled()
 	return self.disabled
 end
 
 -- BUTTON LISTENERS
 -- mouse
-function ButtonTextUDDP:onMouseDown(e)
+function ButtonTextPUDD:onMouseDown(e)
 	if self:hitTestPoint(e.x, e.y) then
 		self.focus = true
 		self:updateVisualState(true)
 		e:stopPropagation()
 	end
 end
-function ButtonTextUDDP:onMouseMove(e)
+function ButtonTextPUDD:onMouseMove(e)
 	if self:hitTestPoint(e.x, e.y) then
 		self.focus = true
 		self:updateVisualState(true)
@@ -258,7 +259,7 @@ function ButtonTextUDDP:onMouseMove(e)
 		end
 	end
 end
-function ButtonTextUDDP:onMouseUp(e)
+function ButtonTextPUDD:onMouseUp(e)
 	if self.focus then
 		self.focus = false
 		self:updateVisualState(false)
@@ -268,7 +269,7 @@ function ButtonTextUDDP:onMouseUp(e)
 		e:stopPropagation()
 	end
 end
-function ButtonTextUDDP:onMouseHover(e)
+function ButtonTextPUDD:onMouseHover(e)
 	if self:hitTestPoint(e.x, e.y) then
 		self.focus = true
 		self:updateVisualState(true)
@@ -278,22 +279,22 @@ function ButtonTextUDDP:onMouseHover(e)
 	end
 end
 -- touch
-function ButtonTextUDDP:onTouchesBegin(e)
+function ButtonTextPUDD:onTouchesBegin(e)
 	if self.focus then
 		e:stopPropagation()
 	end
 end
-function ButtonTextUDDP:onTouchesMove(e)
+function ButtonTextPUDD:onTouchesMove(e)
 	if self.focus then
 		e:stopPropagation()
 	end
 end
-function ButtonTextUDDP:onTouchesEnd(e)
+function ButtonTextPUDD:onTouchesEnd(e)
 	if self.focus then
 		e:stopPropagation()
 	end
 end
-function ButtonTextUDDP:onTouchesCancel(e)
+function ButtonTextPUDD:onTouchesCancel(e)
 	if self.focus then
 		self.focus = false
 		self:updateVisualState(false)
