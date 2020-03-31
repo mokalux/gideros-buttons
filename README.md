@@ -22,12 +22,23 @@ This button has:
 - a disabled state (image optional) D
 - very customisable
 
-## BUTTON_TEXT_UDDP
-This is the most complete button :-)
+## BUTTON_TEXT_PUDD
+This is the most complete button (almost) :-)
 This button has:
 - text (optional)
+- a pixel (optional) P
 - an up state (image optional) U
 - a down state (image optional) D
 - a disabled state (image optional) D
+- very customisable
+
+## BUTTON_TEXT_PUDDT
+This is the most complete button ;-)
+This button has:
+- text (optional)
 - a pixel (optional) P
+- an up state (image optional) U
+- a down state (image optional) D
+- a disabled state (image optional) D
+- a tooltip (optional) T
 - very customisable
