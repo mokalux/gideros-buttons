@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+ <properties orientation="1" html5_wasm="0" splash_h_image="" encryptAssets="1" retinaDisplay="0" html5_fbload="100" iosDevice="0" mainluaOnly="0" mouseTouchOrder="0" html5_pack="0" html5_host="" html5_mem="256" html5_fbinstant="0" splash_v_image="" app_name="gdoc_00_scenemanager" osx_org="GiderosMobile" logicalHeight="1280" exportMode="0" mouseToTouch="1" windowHeight="0" version="1.0" fps="60" ios_bundle="com.yourdomain." macos_category="5" winrt_org="GiderosMobile" win_domain="giderosmobile.com" architecture="7" app_icon="" disableSplash="0" version_code="1" backgroundColor="#ffffff" html5_symbols="0" build_number="1" osx_domain="giderosmobile.com" osx_bundle="com.yourdomain." encryptCode="1" osx_signingId="" osx_installerId="" scaleMode="5" winrt_package="com.yourdomain.yourapp" osx_category="5" atv_bundle="com.yourdomain.yourapp-atv" autorotation="0" windowWidth="0" touchToMouse="1" logicalWidth="720" tv_icon="" macos_bundle="com.yourdomain.yourapp-macos" vsync="1" html5_crash="" win_org="GiderosMobile" splashScaleMode="0">
+  <imageScales/>
+  <plugins>
+   <plugin enabled="1" name="Easing"/>
+   <plugin enabled="1" name="Ogg"/>
+   <plugin enabled="1" name="SceneManager"/>
+  </plugins>
+  <exports>
+   <export name="APK">
+    <property name="androidPath" value=""/>
+    <property name="androidSdk" value=""/>
+    <property name="androidTarget" value="30"/>
+    <property name="androidTools" value=""/>
+    <property name="buildAab" value="1"/>
+    <property name="buildApk" value="0"/>
+    <property name="deployApk" value="0"/>
+    <property name="javaPath" value=""/>
+    <property name="keyAlias" value=""/>
+    <property name="keyStore" value=""/>
+    <property name="packageName" value="com.yourdomain.yourapp"/>
+    <property name="timestampApk" value="0"/>
+   </export>
+  </exports>
+ </properties>
+ <folder name="audio">
+  <file name="assets/audio/DM-CGS-16.ogg"/>
+ </folder>
+ <folder name="classes">
+  <file name="assets/classes/audio.lua"/>
+  <file name="assets/classes/buttonBeast.lua"/>
+ </folder>
+ <folder name="fonts">
+  <file name="assets/fonts/Cabin-Regular-TTF.ttf"/>
+ </folder>
+ <folder name="gfx">
+  <folder name="menu">
+   <file name="assets/gfx/menu/bg.png"/>
+  </folder>
+  <folder name="ui">
+   <file name="assets/gfx/ui/Cross grey.png"/>
+  </folder>
+ </folder>
+ <folder name="scenes">
+  <file name="assets/scenes/game.lua"/>
+  <file name="assets/scenes/gameover.lua"/>
+  <file name="assets/scenes/menu.lua"/>
+ </folder>
+ <file name="assets/main.lua"/>
+</project>
